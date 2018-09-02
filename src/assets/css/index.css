@@ -1,0 +1,99 @@
+html {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+h2.games-list {
+  margin-bottom: 40px;
+}
+
+.game-card {
+  border: 1px solid #cecece;
+  cursor: pointer;
+  width: 200px;
+  height: 150px;
+  text-align: center;
+}
+
+.game-card span {
+  position: relative;
+  top: 40%;
+}
+
+nav.header {
+  background-color: #6578ff;
+  color: white;
+  padding: 20px;
+  box-shadow: 1px 3px #0000008c;
+  margin-bottom: 50px;
+}
+
+.header .logo {
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.header .links {
+  display: inline-block;
+  float: right;
+}
+
+.header a {
+  color: white;
+}
+
+.header .links li {
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 20px 5px 20px;
+}
+
+.header .links li:hover {
+  border-bottom: 3px solid black;
+  color: #1bff42;
+}
+
+.not-found {
+  margin-top: 100px;
+}
+
+.not-found img {
+  width: 400px;
+}
+
+.not-found h1 {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.heart {
+  color: red;
+  font-size: 20px;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  border-top: 1px solid #cecece;
+  padding-top: 20px;
+  text-align: center;
+}
