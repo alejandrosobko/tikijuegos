@@ -20,19 +20,6 @@ h2.games-list {
   margin-bottom: 40px;
 }
 
-.game-card {
-  border: 1px solid #cecece;
-  cursor: pointer;
-  width: 200px;
-  height: 150px;
-  text-align: center;
-}
-
-.game-card span {
-  position: relative;
-  top: 40%;
-}
-
 nav.header {
   background-color: #6578ff;
   color: white;
@@ -96,4 +83,43 @@ footer {
   border-top: 1px solid #cecece;
   padding-top: 20px;
   text-align: center;
+}
+
+
+
+
+.game-card {
+  border: 1px solid #cecece;
+  cursor: pointer;
+  line-height: 200px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.game-card a {
+  display: block;
+}
+
+.dnd-game .destination {
+  margin-bottom: 50px;
+}
+
+.dnd-game .destination .box {
+  background-color: lightgray;
+  border: 1px solid black;
+  padding: 10px;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.dnd-game .source .dnd-number {
+  width: 50px;
+  color: black;
+  border: 1px solid black;
+  background-color: red;
+  padding: 20px;
+  margin-right: 10px;
+  cursor: pointer;
 }

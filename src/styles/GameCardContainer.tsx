@@ -7,10 +7,8 @@ interface IGCContainerProps {
 
 export default (props: IGCContainerProps) => {
   return (
-    <div className="game-card">
-      <span>
-        <Link to={`/${props.title}`} >{props.title}</Link>
-      </span>
+    <div className="game-card col-xs-3">
+      <Link to={`/juegos/${props.title}`} >{props.title}</Link>
     </div>
   )
 }
