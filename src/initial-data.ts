@@ -8,10 +8,10 @@ const initialData = {
     }
   },
   numbers: {
-    'four': { id: 4, content: '4' },
-    'one': { id: 1, content: '1' },
-    'three': { id: 3, content: '3' },
-    'two': { id: 2, content: '2' },
+    'four': { id: 'four', content: '4' },
+    'one': { id: 'one', content: '1' },
+    'three': { id: 'three', content: '3' },
+    'two': { id: 'two', content: '2' },
   },
 };
 

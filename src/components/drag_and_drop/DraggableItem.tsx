@@ -3,17 +3,19 @@ import { Draggable } from 'react-beautiful-dnd';
 
 interface IDraggableItem {
   className: string;
-  value: number;
+  value: string;
+  itemPosition: number;
+  content: string;
 }
 
 export default (props: IDraggableItem) =>
-  <Draggable draggableId={props.value.toString()} index={props.value}>
+  <Draggable draggableId={props.value} index={props.itemPosition}>
     {(provided: any) => (
       <div className="dnd-number"
            ref={provided.innerRef}
            {...provided.draggableProps}
            {...provided.dragHandleProps}>
-        <span>{props.value}</span>
+        <span>{props.content}</span>
       </div>
     )}
   </Draggable>
