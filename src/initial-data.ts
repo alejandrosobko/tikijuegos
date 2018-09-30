@@ -3,11 +3,12 @@ const initialData = {
   columns: {
     'column-1': {
       id: 'column-1',
-      numberIds: ['four', 'one', 'three', 'two'],
+      numberIds: ['four', 'one', 'five', 'three', 'two'],
       title: 'numbers',
     }
   },
   numbers: {
+    'five': { id: 'five', content: '5' },
     'four': { id: 'four', content: '4' },
     'one': { id: 'one', content: '1' },
     'three': { id: 'three', content: '3' },
