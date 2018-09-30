@@ -11,7 +11,7 @@ interface IDraggableItem {
 export default (props: IDraggableItem) =>
   <Draggable draggableId={props.value} index={props.itemPosition}>
     {(provided: any) => (
-      <div className="dnd-number"
+      <div className={`dnd-number size-${props.value}`}
            ref={provided.innerRef}
            {...provided.draggableProps}
            {...provided.dragHandleProps}>

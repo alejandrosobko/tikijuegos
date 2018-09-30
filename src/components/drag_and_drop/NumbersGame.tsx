@@ -1,4 +1,6 @@
 import * as React from 'react';
+import ClapsSound from '../../assets/sounds/claps.wav';
+import MoveSound from '../../assets/sounds/move.wav';
 import initialData from '../../initial-data';
 import VerticalColumn from '../../styles/VerticalColumn';
 
@@ -29,7 +31,11 @@ export default class NumbersGame extends React.Component<INumbersGameProps, any>
     const numbers = numberIds.map((numberId: string) => parseInt(this.state.numbers[numberId].content, 10));
 
     if (isSortedDesc(numbers)) {
-      alert('Ganaste!');
+      const audio = new Audio(ClapsSound);
+      audio.play();
+    } else {
+      const audio = new Audio(MoveSound);
+      audio.play();
     }
 
     const newColumn = {

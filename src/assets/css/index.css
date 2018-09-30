@@ -115,7 +115,6 @@ footer {
 }
 
 .dnd-game .source .dnd-number {
-  width: 50px;
   color: white;
   border: 1px solid black;
   background-color: red;
@@ -125,3 +124,9 @@ footer {
   text-align: center;
   font-weight: bold;
 }
+
+.dnd-number.size-one   { width: 20px !important; }
+.dnd-number.size-two   { width: 30px !important; }
+.dnd-number.size-three { width: 40px !important; }
+.dnd-number.size-four  { width: 50px !important; }
+.dnd-number.size-five  { width: 60px !important; }
