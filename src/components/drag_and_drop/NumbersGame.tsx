@@ -30,7 +30,7 @@ export default class NumbersGame extends React.Component<INumbersGameProps, any>
 
     const numbers = numberIds.map((numberId: string) => parseInt(this.state.numbers[numberId].content, 10));
 
-    if (isSortedDesc(numbers)) {
+    if (isSortedAsc(numbers)) {
       const audio = new Audio(ClapsSound);
       audio.play();
     } else {
@@ -73,6 +73,6 @@ export default class NumbersGame extends React.Component<INumbersGameProps, any>
 
 }
 
-function isSortedDesc(list: number[]): boolean {
-  return list.every((val: any, i: number, arr: any) => !i || (val <= arr[i - 1]));
+function isSortedAsc(list: number[]): boolean {
+  return list.every((val: any, i: number, arr: any) => !i || (val >= arr[i - 1]));
 }
