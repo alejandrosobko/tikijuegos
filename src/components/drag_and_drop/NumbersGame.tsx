@@ -4,11 +4,8 @@ import MoveSound from '../../assets/sounds/move.wav';
 import initialData from '../../initial-data';
 import VerticalColumn from '../../styles/VerticalColumn';
 
-export interface INumbersGameProps {
-  title: string;
-}
 
-export default class NumbersGame extends React.Component<INumbersGameProps, any> {
+export default class NumbersGame extends React.Component<any, any> {
 
   public constructor(props: any) {
     super(props);
@@ -62,7 +59,8 @@ export default class NumbersGame extends React.Component<INumbersGameProps, any>
 
         return (
           <div key={column.id}>
-            <h3>{this.props.title}</h3>
+            <h2>Arrastrar</h2>
+            <h3>Ordená las cajas de mayor a menor</h3>
             <VerticalColumn column={column} items={numbers} onDragEnd={this.onDragEnd} />
           </div>
         )
