@@ -1,6 +1,6 @@
 import * as React from 'react';
-import NumberBox from '../NumbersGame/NumberBox';
-import { INumberItemProps } from '../NumbersGame/NumbersGame';
+import NumberBox from './NumberBox';
+import { INumberItemProps } from './NumbersGame';
 
 interface IDraggableListItems {
   items: INumberItemProps[]
