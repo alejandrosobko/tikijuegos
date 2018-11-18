@@ -1,9 +1,9 @@
 import * as React from 'react';
 import initialData from 'src/initial-data';
-import ClapsSound from '../assets/sounds/claps.wav';
-import MoveSound from '../assets/sounds/move.wav';
-import VerticalColumn from '../styles/VerticalColumn';
-import NumbersGameContext from './drag_and_drop/NumbersGameContext';
+import ClapsSound from '../../assets/sounds/claps.wav';
+import MoveSound from '../../assets/sounds/move.wav';
+import VerticalColumn from '../../styles/VerticalColumn';
+import NumbersGameContext from '../drag_and_drop/NumbersGameContext';
 
 
 export interface IColumnProps {

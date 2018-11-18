@@ -1,7 +1,7 @@
 import * as React from 'react';
 import DraggableListItems from 'src/components/drag_and_drop/DraggableListItems';
 import DroppableWrapper from 'src/components/drag_and_drop/DroppableWrapper';
-import { IColumnProps, INumberItemProps } from 'src/components/NumbersGame';
+import { IColumnProps, INumberItemProps } from 'src/components/NumbersGame/NumbersGame';
 
 
 interface IVerticalColumnProps {

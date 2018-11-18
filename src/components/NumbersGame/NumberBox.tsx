@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DraggableItemWrapper from './drag_and_drop/DraggableItemWrapper';
+import DraggableItemWrapper from '../drag_and_drop/DraggableItemWrapper';
 
 interface IDraggableItem {
   className: string;
