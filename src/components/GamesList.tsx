@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DnDGame from './drag_and_drop/DnDGame';
+import DnDGame from './DnDGame';
 
 export default (props: any) =>
   <div>

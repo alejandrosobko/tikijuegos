@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router';
-import GroupAnimalsGame from './drag_and_drop/GroupAnimalsGame';
-import NumbersGame from './drag_and_drop/NumbersGame';
 import GamesList from './GamesList';
+import GroupAnimalsGame from './GroupAnimalsGame';
 import Home from './Home';
 import NotFound from './NotFound';
+import NumbersGame from './NumbersGame';
 
 export default (props: any) =>
   <div className="container">

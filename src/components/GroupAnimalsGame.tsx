@@ -3,7 +3,7 @@ import * as React from 'react';
 
 export default (props: any) => {
   return (
-    <div>Hola</div>
+    <div>To be completed!</div>
   )
 }
 

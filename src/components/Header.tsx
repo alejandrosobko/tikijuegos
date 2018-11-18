@@ -8,7 +8,6 @@ export default (props: any) =>
       <ul>
         <Link to="/juegos" ><li>Juegos</li></Link>
         <Link to="/asd" ><li>Test</li></Link>
-        <Link to="/contact" ><li>Contacto</li></Link>
       </ul>
     </div>
   </nav>
