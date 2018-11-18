@@ -1,5 +1,5 @@
 import * as React from 'react';
-import GameCard from '../GameCard';
+import GameCard from './GameCard';
 
 interface IGCContainerProps {
   title: string;
