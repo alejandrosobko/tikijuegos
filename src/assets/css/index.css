@@ -147,3 +147,14 @@ footer {
 .dnd-number.size-three { width: 120px !important; }
 .dnd-number.size-four  { width: 160px !important; }
 .dnd-number.size-five  { width: 200px !important; }
+
+.you-win button {
+  background-color: orange;
+  color: white;
+  border: 1px solid #c68307;
+  border-radius: 5px;
+  height: 40px;
+  position: absolute;
+  right: 25%;
+  top: 30%;
+}

@@ -4,6 +4,7 @@ import ClapsSound from '../../assets/sounds/claps.wav';
 import MoveSound from '../../assets/sounds/move.wav';
 import VerticalColumn from '../../styles/VerticalColumn';
 import NumbersGameContext from '../drag_and_drop/NumbersGameContext';
+import RestartGame from '../RestartGame';
 
 
 export interface IColumnProps {
@@ -23,6 +24,7 @@ export interface INumberItemProps {
 export interface INumbersGameState {
   column: IColumnProps;
   numbers: INumbersProps;
+  win: boolean;
 }
 
 export default class NumbersGame extends React.Component<any, INumbersGameState> {
@@ -30,8 +32,9 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
   public constructor(props: any) {
     super(props);
     this.onDragEnd = this.onDragEnd.bind(this);
+    this.restartGame = this.restartGame.bind(this)
 
-    this.state = {...initialData};
+    this.state = {...initialData, win: false};
   }
 
   public onDragEnd(result: any) {
@@ -44,13 +47,14 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
     numberIds.splice(source.index, 1);
     numberIds.splice(destination.index, 0, draggableId);
     const numbers = numberIds.map((numberId: string) => parseInt(this.state.numbers[numberId].content, 10));
+    const win = isSortedAsc(numbers);
 
-    this.playSound(numbers);
-    this.updateState(column, numberIds);
+    this.playSound(win);
+    this.updateState(column, numberIds, win);
   }
 
-  public playSound(numbers: number[]) {
-    const sound = isSortedAsc(numbers) ? ClapsSound : MoveSound;
+  public playSound(win: boolean) {
+    const sound = win ? ClapsSound : MoveSound;
     new Audio(sound).play();
   }
 
@@ -60,6 +64,7 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
       <div>
         <h2>Arrastrar</h2>
         <h3>Ordená las cajas de mayor a menor</h3>
+        <RestartGame win={this.state.win} onRestart={this.restartGame} />
         <NumbersGameContext onDragEnd={this.onDragEnd}>
           <VerticalColumn column={this.state.column} items={numbers} />
         </NumbersGameContext>
@@ -67,7 +72,11 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
     )
   }
 
-  private updateState(column: IColumnProps, numberIds: string[]) {
+  private restartGame() {
+    this.setState({...initialData, win: false});
+  }
+
+  private updateState(column: IColumnProps, numberIds: string[], win: boolean) {
     const newColumn = {
       ...column,
       numberIds
@@ -75,7 +84,8 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
 
     this.setState({
       ...this.state,
-      column: newColumn
+      column: newColumn,
+      win
     });
   }
 
