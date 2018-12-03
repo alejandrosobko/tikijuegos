@@ -63,7 +63,7 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
     return (
       <div>
         <h2>Arrastrar</h2>
-        <h3>Ordená las cajas de mayor a menor</h3>
+        <h3>Ordená las cajas de menor a mayor</h3>
         <RestartGame win={this.state.win} onRestart={this.restartGame} />
         <NumbersGameContext onDragEnd={this.onDragEnd}>
           <VerticalColumn column={this.state.column} items={numbers} />
