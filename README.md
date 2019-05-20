@@ -7,6 +7,9 @@ React game for kids using drag and drop!
 This repository contains one game (there will be more!) made in react using [beautifull drag and drop](https://github.com/atlassian/react-beautiful-dnd) and deployed on Heroku.
 It's a kids game, without score nor competition.
 
+#### Play
+http://tikijuegos.herokuapp.com/
+
 #### Dev
 - Clone this repo
 - `npm install`
