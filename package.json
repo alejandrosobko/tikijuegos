@@ -6,7 +6,7 @@
     "@types/react-beautiful-dnd": "^7.1.2",
     "@types/react-router": "^4.0.30",
     "@types/react-router-dom": "^4.3.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "react": "^16.4.2",
     "react-beautiful-dnd": "^9.0.2",
     "react-dom": "^16.4.2",
