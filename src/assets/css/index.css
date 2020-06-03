@@ -26,7 +26,6 @@ nav.header {
   color: white;
   padding: 20px;
   box-shadow: 0px 3px #0000008c;
-  margin-bottom: 50px;
 }
 
 .header .logo {
@@ -96,6 +95,8 @@ footer {
   line-height: 200px;
   text-align: center;
   margin-right: 20px;
+  display: inline-block;
+  width: 20%;
 }
 
 .game-card a {

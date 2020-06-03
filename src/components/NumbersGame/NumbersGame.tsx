@@ -62,8 +62,8 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
     const numbers = this.state.column.numberIds.map((numberId: string) => this.state.numbers[numberId]);
     return (
       <div>
-        <h2>Arrastrar</h2>
-        <h3>Ordená las cajas de menor a mayor</h3>
+        <h3>Arrastrar</h3>
+        <h5>Ordená las cajas de menor a mayor</h5>
         <RestartGame win={this.state.win} onRestart={this.restartGame} />
         <NumbersGameContext onDragEnd={this.onDragEnd}>
           <VerticalColumn column={this.state.column} items={numbers} />

@@ -2,4 +2,12 @@
   .not-found img {
     width: 70%;
   }
+
+  .game-card {
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    margin-bottom: 10px;
+  }
+
 }
