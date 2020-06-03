@@ -7,7 +7,6 @@ export default (props: any) =>
     <div className="links">
       <ul>
         <Link to="/juegos" ><li>Juegos</li></Link>
-        <Link to="/asd" ><li>Test</li></Link>
       </ul>
     </div>
   </nav>
