@@ -2,14 +2,15 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 interface IGCContainerProps {
-  url: string;
+  gameId: number;
   title: string;
 }
 
 export default (props: IGCContainerProps) => {
   return (
-    <div className="game-card">
-      <Link to={props.url} >{props.title}</Link>
+    <div className='game-card'>
+      <span>{props.title}</span>
+      <Link to={`/juegos/arrastrar/${props.gameId}`} className={`game-number-${props.gameId}`} />
     </div>
   )
 }

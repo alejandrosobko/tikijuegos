@@ -89,18 +89,32 @@ footer {
   text-align: center;
 }
 
+.games-list {
+  margin-bottom: 30px;
+}
+
 .game-card {
-  border: 1px solid #cecece;
   cursor: pointer;
-  line-height: 200px;
   text-align: center;
   margin-right: 20px;
   display: inline-block;
   width: 20%;
 }
 
+.game-card .game-number-1 {
+  background: url('../images/numbers.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.game-card span {
+  color: crimson;
+}
+
 .game-card a {
   display: block;
+  height: 210px;
+  margin-top: 15px;
 }
 
 .dnd-game {

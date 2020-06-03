@@ -1,9 +1,9 @@
 import * as React from 'react';
-import DnDGame from './NumbersGame/DnDGame';
+import GameCard from 'src/styles/GameCard';
 
 export default (props: any) =>
   <div>
     <h3 className="games-list">Lista de juegos:</h3>
-    <DnDGame gameId={1} title="Ordenar números"/>
-    <DnDGame gameId={2} title="Agrupar animales"/>
+    <GameCard gameId={1} title="Ordenar números"/>
+    <GameCard gameId={2} title="Agrupar animales"/>
   </div>
