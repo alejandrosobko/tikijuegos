@@ -29,6 +29,16 @@ export function move(source:any, destination:any, droppableSource:any, droppable
 
   destClone.splice(droppableDestination.index, 0, removed);
 
+  if (droppableSource.droppableId !== droppableDestination.droppableId) {
+    if (droppableSource.droppableId === 'column1') {
+      const [toSwap] = destClone.splice(0, 1);
+      sourceClone.splice(destClone.length, 0, toSwap);
+    } else {
+      const [toSwap] = destClone.splice(destClone.length - 1, 1);
+      sourceClone.splice(0, 0, toSwap);
+    }
+  }
+
   const result:any = {};
   result[droppableSource.droppableId] = sourceClone;
   result[droppableDestination.droppableId] = destClone;
