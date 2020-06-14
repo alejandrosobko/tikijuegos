@@ -1,5 +1,5 @@
 import React from 'react';
-import NumbersListGame from '../NumbersGame/NumbersListGame';
+import TwoHorizontalColumn from '../drag_and_drop/TwoHorizontalColumn';
 import { getLetters } from '../utils';
 
 export default () => {
@@ -9,6 +9,6 @@ export default () => {
   }
 
   return (
-    <NumbersListGame data={INITIAL_DATA} />
+    <TwoHorizontalColumn data={INITIAL_DATA} />
   )
 }
