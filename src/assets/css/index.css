@@ -149,6 +149,10 @@ footer {
   display: inline-block;
 }
 
+.numbers-list-game .dnd-game .source {
+  display: flex;
+}
+
 .dnd-game .source .dnd-number div {
   display: inline-block;
   color: white;
@@ -161,6 +165,16 @@ footer {
   border: 1px solid black;
   background-color: red;
   margin: 0 auto;
+}
+
+.horizontal {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.horizontal div {
+  margin-left: 10px;
 }
 
 .dnd-number.size-one   { width: 40px !important; }

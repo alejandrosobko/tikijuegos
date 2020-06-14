@@ -4,12 +4,12 @@ import DraggableListItems from 'src/components/NumbersGame/NumberListItems';
 import { IColumnProps, INumberItemProps } from 'src/components/NumbersGame/NumbersGame';
 
 
-interface IVerticalColumnProps {
+export interface IVerticalColumnProps {
   column: IColumnProps;
   items: INumberItemProps[];
 }
 
 export default (props: IVerticalColumnProps) =>
   <DroppableWrapper droppableId={props.column.id} className="source">
-    <DraggableListItems items={props.items} />
+    <DraggableListItems items={props.items} className='vertical' />
   </DroppableWrapper>

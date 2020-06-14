@@ -3,11 +3,12 @@ import NumberBox from './NumberBox';
 import { INumberItemProps } from './NumbersGame';
 
 interface IDraggableListItems {
-  items: INumberItemProps[]
+  items: INumberItemProps[];
+  className: string;
 }
 
 export default (props: IDraggableListItems) =>
-  <div> {props.items.map(toNumberBox)} </div>
+  <div className={props.className}> {props.items.map(toNumberBox)} </div>
 
 
 function toNumberBox(item: INumberItemProps, position: number) {

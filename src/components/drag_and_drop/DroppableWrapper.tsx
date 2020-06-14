@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Droppable } from 'react-beautiful-dnd';
 
 export default (props: any) =>
-  <Droppable droppableId={props.droppableId}>
+  <Droppable droppableId={props.droppableId} direction={props.direction || 'vertical'}>
     {(provided: any) => (
        <div className={props.className}
             ref={provided.innerRef}
