@@ -11,8 +11,8 @@ const INITIAL_DATA = {
   column2: getItems(5, 6, true)
 }
 
-export default function NumbersListGame() {
-  const [data, setData] = useState(INITIAL_DATA);
+export default function NumbersListGame(props: any) {
+  const [data, setData] = useState(props.data || INITIAL_DATA);
   const [win, setWin] = useState(false);
 
   const getColumn = (id: string) => data[id];

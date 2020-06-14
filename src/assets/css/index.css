@@ -122,6 +122,12 @@ footer {
   background-repeat: no-repeat;
 }
 
+.game-card .game-number-3 {
+  background: url('../images/abc.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .game-card span {
   color: crimson;
 }
@@ -168,6 +174,7 @@ footer {
   padding: 20px;
   text-align: center;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .dnd-game .source .dnd-number {

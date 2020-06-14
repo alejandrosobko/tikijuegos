@@ -5,9 +5,19 @@
  * @param shuffle boolean to indicate if the result should be shuffled
  */
 export function getItems(count:number, offset:number, shuffle = false) {
-  const result = Array.from({ length: count }, (v, k) => k).map(k => ({id: `${k + offset}`, content: `${k + offset}`}));
+  const result = generateArrayFrom(count).map(k => ({id: `${k + offset}`, content: `${k + offset}`}));
 
   return shuffle ? shuffleArray(result) : result;
+}
+
+export function getLetters(count:number, offset:number, shuffle = false) {
+  const result = generateArrayFrom(count).map(k => ({id: `${k + offset}`, content: `${String.fromCharCode(k + offset+96)}`}));
+
+  return shuffle ? shuffleArray(result) : result;
+}
+
+function generateArrayFrom(count: number) {
+  return Array.from({ length: count }, (v, k) => k)
 }
 
 export function reorder(list:any, startIndex:any, endIndex:any) {
