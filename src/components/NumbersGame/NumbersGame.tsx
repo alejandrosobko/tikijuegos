@@ -49,13 +49,8 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
     const numbers = numberIds.map((numberId: string) => parseInt(this.state.numbers[numberId].content, 10));
     const win = isSortedAsc(numbers);
 
-    this.playSound(win);
+    playSound(win);
     this.updateState(column, numberIds, win);
-  }
-
-  public playSound(win: boolean) {
-    const sound = win ? ClapsSound : MoveSound;
-    new Audio(sound).play();
   }
 
   public render() {
@@ -93,4 +88,9 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
 
 export function isSortedAsc(list: number[]): boolean {
   return list.every((val: any, i: number, arr: any) => !i || (parseInt(val, 10) >= arr[i - 1]));
+}
+
+export function playSound(win: boolean) {
+  const sound = win ? ClapsSound : MoveSound;
+  new Audio(sound).play();
 }

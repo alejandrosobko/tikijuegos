@@ -194,9 +194,10 @@ footer {
   border: 1px solid #c68307;
   border-radius: 5px;
   height: 40px;
-  position: absolute;
-  right: 25%;
-  top: 30%;
+  position: relative;
+  left: 70%;
+  top: 20%;
+  margin: 20px;
 }
 
 #lets-play {

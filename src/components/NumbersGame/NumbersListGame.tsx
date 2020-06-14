@@ -4,7 +4,7 @@ import WidthError from 'src/styles/WidthError';
 import NumbersGameContext from '../drag_and_drop/NumbersGameContext';
 import RestartGame from '../RestartGame';
 import { getItems, move, reorder } from '../utils';
-import { isSortedAsc } from './NumbersGame';
+import { isSortedAsc, playSound } from './NumbersGame';
 
 const INITIAL_DATA = {
   column1: getItems(5, 1, true),
@@ -55,7 +55,8 @@ export default function NumbersListGame() {
     }
 
     const sorted = isSortedAsc(newData.column1.concat(newData.column2).map((item: any) => item.id));
-    setWin(sorted)
+    setWin(sorted);
+    playSound(sorted);
   }
 
   const items1 = data.column1.map((item: any) => item.content)
