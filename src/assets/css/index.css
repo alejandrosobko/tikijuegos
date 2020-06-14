@@ -55,6 +55,11 @@ nav.header {
   color: #1bff42;
 }
 
+.not-found {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .not-found img {
   width: 30%;
   display: block;
