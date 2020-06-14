@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import HorizontalColumn from 'src/styles/HorizontalColumn';
+import WidthError from 'src/styles/WidthError';
 import NumbersGameContext from '../drag_and_drop/NumbersGameContext';
 import RestartGame from '../RestartGame';
 import { getItems, move, reorder } from '../utils';
@@ -61,6 +62,7 @@ export default function NumbersListGame() {
   const items2 = data.column2.map((item: any) => item.content)
   return (
     <div className='numbers-list-game'>
+      <WidthError />
       <RestartGame win={win} onRestart={restartGame} />
 
       <NumbersGameContext onDragEnd={onDragEnd}>

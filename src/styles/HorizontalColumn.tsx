@@ -5,6 +5,8 @@ import { IVerticalColumnProps } from './VerticalColumn';
 
 
 export default (props: IVerticalColumnProps) =>
-  <DroppableWrapper droppableId={props.column.id} className="source" direction='horizontal' >
-    <DraggableListItems items={props.items} className='horizontal' />
-  </DroppableWrapper>
+  <div>
+    <DroppableWrapper droppableId={props.column.id} className="source" direction='horizontal' >
+      <DraggableListItems items={props.items} className='horizontal' />
+    </DroppableWrapper>
+  </div>
