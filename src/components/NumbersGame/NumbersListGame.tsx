@@ -1,18 +1,20 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import { numbersListInitialData } from 'src/initial-data';
 
-export default class NumbersListGame extends React.Component<any, any> {
+export default function NumbersListGame() {
+  const [data, setData] = useState({...numbersListInitialData});
+  const [win, setWin] = useState(false);
+  const cleanData = () => setData({...numbersListInitialData})
+  const makeWinner = () => setWin(true)
 
-  public constructor(props: any) {
-    super(props);
-
-    this.state = { ...numbersListInitialData, win: false};
-  }
-
-  public render() {
-    return (
+  return (
+    <div>
       <h1>Hola</h1>
-    )
-  }
+      <h3>La data es: {data}</h3>
+      <button onClick={cleanData}>click!</button>
+      <h3>Gané? {win}</h3>
+      <button onClick={makeWinner}>click!</button>
+    </div>
+  )
 
 }
