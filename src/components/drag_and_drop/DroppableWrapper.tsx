@@ -9,6 +9,7 @@ export default (props: any) =>
             {...provided.droppableProps}
             {...provided.droppablePlaceholder}>
           {props.children}
+          {provided.placeholder}
         </div>
     )}
   </Droppable>
