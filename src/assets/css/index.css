@@ -17,6 +17,10 @@ body {
   min-height: 100%;
 }
 
+.content {
+  margin-top: 20px;
+}
+
 h2.games-list {
   margin-bottom: 40px;
 }
@@ -178,9 +182,18 @@ footer {
   margin-bottom: 10px;
 }
 
-.horizontal div {
+.horizontal div:not(.dnd-game) {
   margin-left: 10px;
+  border-radius: 40px;
+  text-align: center;
 }
+
+.horizontal .dnd-game .source .dnd-number {
+  width: 50px;
+  height: 50px;
+}
+
+
 
 .dnd-number.size-one   { width: 40px !important; }
 .dnd-number.size-two   { width: 80px !important; }
