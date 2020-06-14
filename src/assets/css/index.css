@@ -107,6 +107,12 @@ footer {
   background-repeat: no-repeat;
 }
 
+.game-card .game-number-2 {
+  background: url('../images/numbers_2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .game-card span {
   color: crimson;
 }
