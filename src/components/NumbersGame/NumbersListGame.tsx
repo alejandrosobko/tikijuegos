@@ -59,8 +59,8 @@ export default function NumbersListGame() {
     playSound(sorted);
   }
 
-  const items1 = data.column1.map((item: any) => item.content)
-  const items2 = data.column2.map((item: any) => item.content)
+  const items1 = data.column1.map((item: any) => item.id)
+  const items2 = data.column2.map((item: any) => item.id)
   return (
     <div className='numbers-list-game'>
       <WidthError />

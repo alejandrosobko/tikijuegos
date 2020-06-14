@@ -5,7 +5,7 @@
  * @param shuffle boolean to indicate if the result should be shuffled
  */
 export function getItems(count:number, offset:number, shuffle = false) {
-  const result = Array.from({ length: count }, (v, k) => k).map(k => ({id: `${k + offset}`, content: `item ${k + offset}`}));
+  const result = Array.from({ length: count }, (v, k) => k).map(k => ({id: `${k + offset}`, content: `${k + offset}`}));
 
   return shuffle ? shuffleArray(result) : result;
 }
