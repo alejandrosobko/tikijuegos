@@ -91,6 +91,6 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
 
 }
 
-function isSortedAsc(list: number[]): boolean {
-  return list.every((val: any, i: number, arr: any) => !i || (val >= arr[i - 1]));
+export function isSortedAsc(list: number[]): boolean {
+  return list.every((val: any, i: number, arr: any) => !i || (parseInt(val, 10) >= arr[i - 1]));
 }
