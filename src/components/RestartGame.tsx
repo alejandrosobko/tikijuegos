@@ -5,6 +5,7 @@ export default (props: any) => {
 
   return (
     <div className="you-win">
+      <div className="winner">Ganaste! 🎉 😁</div>
       <button onClick={props.onRestart}>Jugar de nuevo</button>
     </div>
   )

@@ -6,10 +6,10 @@
   .game-card {
     margin: 0 auto;
     display: inline-block;
-    width: 45%;
+    width: 46%;
     margin-bottom: 20px;
     margin-right: 10px;
-    height: auto;
+    height: 250px;
   }
 
   .widthError {
@@ -26,6 +26,20 @@
     cursor: pointer;
     width: 15px;
     float: right;
+  }
+
+  .dnd-game {
+    padding: 30px 0 30px 0;
+  }
+
+  .dnd-game .source .dnd-number div {
+    padding: 5px 15px 5px 15px;
+    font-size: 30px;
+    margin: 0 auto;
+  }
+
+  .dnd-game .size-10 div {
+    padding: 5px;
   }
 
 }
