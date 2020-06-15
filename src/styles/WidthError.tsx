@@ -3,17 +3,22 @@ import { useState } from 'react';
 
 
 export default () => {
-  const [width, setWidth] = useState(window.innerWidth)
-  const updateWidth = () => setWidth(window.innerWidth)
+  const [hideMsg, setHideMsg] = useState(window.innerWidth > window.innerHeight)
+  const updateWidth = () => setHideMsg(window.innerWidth > window.innerHeight)
+
   React.useLayoutEffect(() => {
     window.addEventListener('resize', updateWidth);
 
     return () => window.removeEventListener('resize', updateWidth);
   })
+  const hideMessage = () => setHideMsg(true);
 
   return (
-    <div className={width < window.innerHeight ? 'widthError' : 'hide'}>
-      <h1>Gira la pantalla para una mejor experiencia de juego</h1>
+    <div className={hideMsg ? 'hide' : 'widthError'}>
+      <span className='hideMsg' onClick={hideMessage}>X</span>
+      <div>
+        <h5>Gira la pantalla para una mejor experiencia de juego</h5>
+      </div>
     </div>
   )
 }

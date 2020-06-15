@@ -5,20 +5,27 @@
 
   .game-card {
     margin: 0 auto;
-    display: block;
-    width: 70%;
-    margin-bottom: 10px;
+    display: inline-block;
+    width: 45%;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    height: auto;
   }
 
   .widthError {
-    padding: 10px;
     margin-bottom: 50px;
     background: yellow;
     border-radius: 15px;
-    margin-top: 30px;
     color: #6d6d6d;
     text-align: center;
     border: solid #fff6aa 3px;
+  }
+
+  .hideMsg {
+    display: block;
+    cursor: pointer;
+    width: 15px;
+    float: right;
   }
 
 }

@@ -105,9 +105,17 @@ footer {
 .game-card {
   cursor: pointer;
   text-align: center;
-  margin-right: 20px;
   display: inline-block;
   width: 20%;
+  margin-bottom: 10px;
+  box-shadow: 1px black solid aliceblue;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.36);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.36);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.36);
+  border-radius: 10px;
+  margin-right: 30px;
+  height: 300px;
+  vertical-align: top;
 }
 
 .game-card .game-number-1 {
@@ -124,6 +132,12 @@ footer {
 
 .game-card .game-number-3 {
   background: url('../images/abc.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.game-card .game-number-4 {
+  background: url('../images/memo.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
