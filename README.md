@@ -15,6 +15,7 @@ http://tikijuegos.herokuapp.com/
 - Clone this repo
 - `npm install`
 - `npm start`
+- Deploy: `git push origin production`
 
 #### Issues?
 If you found a bug please create an issue!
