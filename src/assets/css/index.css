@@ -296,6 +296,28 @@ footer {
   animation:spin 1s linear infinite;
 }
 
+.memotest-box {
+  display: inline-block;
+  border: 2px solid darkred;
+  margin: 10px;
+  width: 160px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.memotest-box img:not(.hide) {
+  width: inherit;
+  visibility: visible;
+  opacity: 1;
+}
+
+.memotest-box img.hide {
+  width: inherit;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
 @-moz-keyframes spin {
   0% { -moz-transform: rotate(-5deg); }
   50% { -moz-transform: rotate(5deg); }
