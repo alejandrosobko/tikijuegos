@@ -2,15 +2,6 @@ import React, { useState } from 'react';
 import movementSound from 'src/assets/sounds/memotest-success.wav';
 import WidthError from 'src/styles/WidthError';
 import { shuffleArray } from 'src/utils';
-import Chick from '../../assets/images/memotest/chick.png';
-import Doc from '../../assets/images/memotest/doc.png';
-import Guido from '../../assets/images/memotest/guido.png';
-import Mate from '../../assets/images/memotest/mate.png';
-import Ramon from '../../assets/images/memotest/ramon.png';
-import Rayo from '../../assets/images/memotest/rayo.png';
-import Rey from '../../assets/images/memotest/rey.png';
-import Saly from '../../assets/images/memotest/saly.png';
-import Storm from '../../assets/images/memotest/storm.png';
 import { playSound } from '../NumbersGame/NumbersGame';
 import RestartGame from '../RestartGame';
 import MemotestBox from './MemotestBox';
@@ -24,9 +15,12 @@ interface IStateValue {
   visible: boolean
 }
 
-const MemotestGame = () => {
-  const images = [Doc, Guido, Mate, Ramon, Rayo, Rey, Saly, Storm, Chick]
-  const [elements, setElements] = useState(buildInitialState(images))
+interface IMemotestGameProps {
+  images: string[]
+}
+
+const MemotestGame = (props: IMemotestGameProps) => {
+  const [elements, setElements] = useState(buildInitialState(props.images))
   const [initialOrder, setInitialOrderinitialOrder] = useState(shuffleArray(Object.keys(elements)))
   const [firstElement, setFirstElement] = useState('')
   const [secondElement, setSecondElement] = useState('')
@@ -68,7 +62,7 @@ const MemotestGame = () => {
     setWin(win)
     setFirstElement('')
     setSecondElement('')
-    setElements(buildInitialState(images))
+    setElements(buildInitialState(props.images))
     setInitialOrderinitialOrder(shuffleArray(Object.keys(elements)))
   }
 
