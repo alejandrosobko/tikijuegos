@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WidthError from 'src/styles/WidthError';
 import { shuffleArray } from 'src/utils';
 import Chick from '../../assets/images/memotest/chick.png';
 import Doc from '../../assets/images/memotest/doc.png';
@@ -9,6 +10,7 @@ import Rayo from '../../assets/images/memotest/rayo.png';
 import Rey from '../../assets/images/memotest/rey.png';
 import Saly from '../../assets/images/memotest/saly.png';
 import Storm from '../../assets/images/memotest/storm.png';
+import RestartGame from '../RestartGame';
 import MemotestBox from './MemotestBox';
 
 
@@ -24,9 +26,10 @@ interface IStateValue {
 const MemotestGame = () => {
   const images = [Doc, Guido, Mate, Ramon, Rayo, Rey, Saly, Storm, Chick]
   const [elements, setElements] = useState(buildInitialState(images))
-  const [initialOrder] = useState(shuffleArray(Object.keys(elements)))
+  const [initialOrder, setInitialOrderinitialOrder] = useState(shuffleArray(Object.keys(elements)))
   const [firstElement, setFirstElement] = useState('')
   const [secondElement, setSecondElement] = useState('')
+  const [win, setWin] = useState(false)
 
   const handleClick = (event: any) => {
     const clickedElement = event.currentTarget.dataset.id;
@@ -51,13 +54,28 @@ const MemotestGame = () => {
     } else {
       setFirstElement(clickedElement)
     }
+
+    setWin(Object.keys(elements).every((e:string) => elements[e].visible))
+  }
+
+  const restartGame = () => {
+    setWin(win)
+    setFirstElement('')
+    setSecondElement('')
+    setElements(buildInitialState(images))
+    setInitialOrderinitialOrder(shuffleArray(Object.keys(elements)))
   }
 
   return (
     <div className="memotest">
-      {initialOrder.map((name:string) =>
-        <MemotestBox key={name} id={name} onClick={handleClick} visible={elements[name].visible} img={elements[name].image} />)
-      }
+      <WidthError />
+      <RestartGame win={win} onRestart={restartGame} />
+
+      <div>
+        {initialOrder.map((name:string) =>
+          <MemotestBox key={name} id={name} onClick={handleClick} visible={elements[name].visible} img={elements[name].image} />)
+        }
+      </div>
     </div>
   )
 }
