@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { shuffleArray } from 'src/utils';
+import Chick from '../../assets/images/memotest/chick.png';
 import Doc from '../../assets/images/memotest/doc.png';
 import Guido from '../../assets/images/memotest/guido.png';
 import Mate from '../../assets/images/memotest/mate.png';
@@ -21,7 +22,7 @@ interface IStateValue {
 }
 
 const MemotestGame = () => {
-  const images = [Doc, Guido, Mate, Ramon, Rayo, Rey, Saly, Storm]
+  const images = [Doc, Guido, Mate, Ramon, Rayo, Rey, Saly, Storm, Chick]
   const [elements, setElements] = useState(buildInitialState(images))
   const [initialOrder] = useState(shuffleArray(Object.keys(elements)))
   const [firstElement, setFirstElement] = useState('')
