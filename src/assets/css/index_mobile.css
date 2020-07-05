@@ -43,3 +43,16 @@
   }
 
 }
+
+
+@media screen and (max-width: 900px) {
+  .memotest-box {
+    margin: 3px;
+    width: 70px;
+    height: 115px;
+  }
+
+  .memotest-box img:not(.hide) {
+    height: 60%;
+  }
+}

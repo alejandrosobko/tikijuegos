@@ -296,19 +296,29 @@ footer {
   animation:spin 1s linear infinite;
 }
 
+.memotest {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
 .memotest-box {
   display: inline-block;
   border: 2px solid darkred;
   margin: 10px;
-  width: 160px;
-  height: 200px;
+  width: 135px;
+  height: 220px;
   border-radius: 10px;
 }
 
 .memotest-box img:not(.hide) {
-  width: inherit;
+  width: 100%;
   visibility: visible;
   opacity: 1;
+  height: 60%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .memotest-box img.hide {
