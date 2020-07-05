@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import movementSound from 'src/assets/sounds/memotest-success.wav';
 import WidthError from 'src/styles/WidthError';
 import { shuffleArray } from 'src/utils';
 import Chick from '../../assets/images/memotest/chick.png';
@@ -10,9 +11,9 @@ import Rayo from '../../assets/images/memotest/rayo.png';
 import Rey from '../../assets/images/memotest/rey.png';
 import Saly from '../../assets/images/memotest/saly.png';
 import Storm from '../../assets/images/memotest/storm.png';
+import { playSound } from '../NumbersGame/NumbersGame';
 import RestartGame from '../RestartGame';
 import MemotestBox from './MemotestBox';
-
 
 interface IState {
   [key: string]: IStateValue
@@ -47,6 +48,8 @@ const MemotestGame = () => {
           newElements[clickedElement].visible = false
           setElements(newElements)
         }, 500);
+      } else {
+        playSound(false, movementSound)
       }
 
       setFirstElement('')
@@ -55,7 +58,10 @@ const MemotestGame = () => {
       setFirstElement(clickedElement)
     }
 
-    setWin(Object.keys(elements).every((e:string) => elements[e].visible))
+    if (Object.keys(elements).every((e:string) => elements[e].visible)) {
+      setWin(true)
+      playSound(true)
+    }
   }
 
   const restartGame = () => {

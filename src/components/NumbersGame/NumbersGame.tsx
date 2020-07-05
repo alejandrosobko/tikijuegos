@@ -90,7 +90,7 @@ export function isSortedAsc(list: number[]): boolean {
   return list.every((val: any, i: number, arr: any) => !i || (parseInt(val, 10) >= arr[i - 1]));
 }
 
-export function playSound(win: boolean) {
-  const sound = win ? ClapsSound : MoveSound;
+export function playSound(win: boolean, moveSound:string|undefined = MoveSound) {
+  const sound = win ? ClapsSound : moveSound;
   new Audio(sound).play();
 }
