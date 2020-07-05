@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import movementSound from 'src/assets/sounds/memotest-success.wav';
-import WidthError from 'src/styles/WidthError';
 import { shuffleArray } from 'src/utils';
 import { playSound } from '../NumbersGame/NumbersGame';
 import RestartGame from '../RestartGame';
@@ -59,7 +58,7 @@ const MemotestGame = (props: IMemotestGameProps) => {
   }
 
   const restartGame = () => {
-    setWin(win)
+    setWin(false)
     setFirstElement('')
     setSecondElement('')
     setElements(buildInitialState(props.images))
@@ -68,7 +67,6 @@ const MemotestGame = (props: IMemotestGameProps) => {
 
   return (
     <div className="memotest">
-      <WidthError />
       <RestartGame win={win} onRestart={restartGame} />
 
       <div>
