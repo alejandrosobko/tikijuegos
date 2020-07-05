@@ -1,6 +1,6 @@
 import React from 'react';
+import { getLetters } from '../../utils';
 import TwoHorizontalColumn from '../drag_and_drop/TwoHorizontalColumn';
-import { getLetters } from '../utils';
 
 export default () => {
   const INITIAL_DATA = {

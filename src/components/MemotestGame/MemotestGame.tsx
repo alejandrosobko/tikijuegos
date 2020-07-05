@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { shuffleArray } from 'src/utils';
 import Doc from '../../assets/images/memotest/doc.png';
 import Guido from '../../assets/images/memotest/guido.png';
 import Mate from '../../assets/images/memotest/mate.png';
@@ -22,17 +23,14 @@ interface IStateValue {
 const MemotestGame = () => {
   const images = [Doc, Guido, Mate, Ramon, Rayo, Rey, Saly, Storm]
   const [elements, setElements] = useState(buildInitialState(images))
+  const [initialOrder] = useState(shuffleArray(Object.keys(elements)))
   const [firstElement, setFirstElement] = useState('')
   const [secondElement, setSecondElement] = useState('')
-
-  const cannotHandleClick = (clickedElement: string) => {
-    return secondElement || (elements[clickedElement].visible)
-  }
 
   const handleClick = (event: any) => {
     const clickedElement = event.currentTarget.dataset.id;
 
-    if (cannotHandleClick(clickedElement)) { return }
+    if (secondElement || (elements[clickedElement].visible)) { return }
 
     elements[clickedElement].visible = true
     if (firstElement) {
@@ -56,15 +54,13 @@ const MemotestGame = () => {
 
   return (
     <div className="memotest">
-      <div className="row">
-        {Object.keys(elements).filter((e) => e.includes('1')).map((name:string) => <MemotestBox key={name} id={name} onClick={handleClick} visible={elements[name].visible} img={elements[name].image} />)}
-      </div>
-      <div className="row">
-        {Object.keys(elements).filter((e) => e.includes('2')).map((name:string) => <MemotestBox key={name} id={name} onClick={handleClick} visible={elements[name].visible} img={elements[name].image} />)}
-      </div>
+      {initialOrder.map((name:string) =>
+        <MemotestBox key={name} id={name} onClick={handleClick} visible={elements[name].visible} img={elements[name].image} />)
+      }
     </div>
   )
 }
+
 
 /**
  * Returns a IState object

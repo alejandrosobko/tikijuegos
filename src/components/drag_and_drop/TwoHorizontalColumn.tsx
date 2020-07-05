@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import HorizontalColumn from 'src/styles/HorizontalColumn';
 import WidthError from 'src/styles/WidthError';
+import { move, reorder } from '../../utils';
 import NumbersGameContext from '../drag_and_drop/NumbersGameContext';
 import { isSortedAsc, playSound } from '../NumbersGame/NumbersGame';
 import RestartGame from '../RestartGame';
-import { move, reorder } from '../utils';
 
 
 export default function TwoHorizontalColumn(props: any) {
