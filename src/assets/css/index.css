@@ -159,12 +159,21 @@ footer {
 }
 
 .game-card .game-number-4 {
-  background: url('../images/memo.png');
+  background: url('../images/memotest-cars.png');
   background-size: 100% 80%;
   width: 90%;
   margin-left: 5%;
   background-repeat: no-repeat;
 }
+
+.game-card .game-number-5 {
+  background: url('../images/memotest-pocoyo.png');
+  background-size: 100% 80%;
+  width: 90%;
+  margin-left: 5%;
+  background-repeat: no-repeat;
+}
+
 
 .game-card span {
   color: crimson;
