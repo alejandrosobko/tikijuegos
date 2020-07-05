@@ -9,72 +9,81 @@ import Saly from '../../assets/images/memotest/saly.png';
 import Storm from '../../assets/images/memotest/storm.png';
 import MemotestBox from './MemotestBox';
 
-const INITIAL_STATE = {
-  'Doc-1': false,
-  'Doc-2': false,
-  'Guido-1': false,
-  'Guido-2': false,
-  'Mate-1': false,
-  'Mate-2': false,
-  'Ramon-1': false,
-  'Ramon-2': false,
-  'Rayo-1': false,
-  'Rayo-2': false,
-  'Rey-1': false,
-  'Rey-2': false,
-  'Saly-1': false,
-  'Saly-2': false,
-  'Storm-1': false,
-  'Storm-2': false,
+
+interface IState {
+  [key: string]: IStateValue
 }
 
-export default () => {
+interface IStateValue {
+  image: string;
+  visible: boolean
+}
+
+const MemotestGame = () => {
+  const images = [Doc, Guido, Mate, Ramon, Rayo, Rey, Saly, Storm]
+  const [elements, setElements] = useState(buildInitialState(images))
   const [firstElement, setFirstElement] = useState('')
-  const [elements, setElements] = useState(INITIAL_STATE)
+  const [secondElement, setSecondElement] = useState('')
+
+  const cannotHandleClick = (clickedElement: string) => {
+    return secondElement || (elements[clickedElement].visible)
+  }
 
   const handleClick = (event: any) => {
+    const clickedElement = event.currentTarget.dataset.id;
+
+    if (cannotHandleClick(clickedElement)) { return }
+
+    elements[clickedElement].visible = true
     if (firstElement) {
-      let newData = Object.assign({}, elements, {[event.currentTarget.dataset.id]: true})
-      setElements(newData)
+      setSecondElement(clickedElement)
 
-      if (firstElement.split('-')[0] !== event.currentTarget.dataset.id.split('-')[0]) {
-        newData = Object.assign({}, elements, {[event.currentTarget.dataset.id]: false})
-        newData[firstElement] = false
-
+      if (firstElement.split('-')[0] !== clickedElement.split('-')[0]) {
         setTimeout(() => {
-          setElements(newData)
+          const newElements = Object.assign({}, elements)
+          newElements[firstElement].visible = false
+          newElements[clickedElement].visible = false
+          setElements(newElements)
         }, 500);
       }
+
       setFirstElement('')
+      setSecondElement('')
     } else {
-      setFirstElement(event.currentTarget.dataset.id)
-      const newData = Object.assign({}, elements, {[event.currentTarget.dataset.id]: true})
-      setElements(newData)
+      setFirstElement(clickedElement)
     }
   }
 
   return (
     <div className="memotest">
       <div className="row">
-        <MemotestBox id='Rayo-1' onClick={handleClick} visible={elements["Rayo-1"]} img={Rayo} />
-        <MemotestBox id='Doc-1' onClick={handleClick} visible={elements["Doc-1"]} img={Doc} />
-        <MemotestBox id='Guido-1' onClick={handleClick} visible={elements["Guido-1"]} img={Guido} />
-        <MemotestBox id='Mate-1' onClick={handleClick} visible={elements["Mate-1"]} img={Mate} />
-        <MemotestBox id='Ramon-1' onClick={handleClick} visible={elements["Ramon-1"]} img={Ramon} />
-        <MemotestBox id='Rey-1' onClick={handleClick} visible={elements["Rey-1"]} img={Rey} />
-        <MemotestBox id='Saly-1' onClick={handleClick} visible={elements["Saly-1"]} img={Saly} />
-        <MemotestBox id='Storm-1' onClick={handleClick} visible={elements["Storm-1"]} img={Storm} />
+        {Object.keys(elements).filter((e) => e.includes('1')).map((name:string) => <MemotestBox key={name} id={name} onClick={handleClick} visible={elements[name].visible} img={elements[name].image} />)}
       </div>
       <div className="row">
-        <MemotestBox id='Rayo-2' onClick={handleClick} visible={elements["Rayo-2"]} img={Rayo} />
-        <MemotestBox id='Doc-2' onClick={handleClick} visible={elements["Doc-2"]} img={Doc} />
-        <MemotestBox id='Guido-2' onClick={handleClick} visible={elements["Guido-2"]} img={Guido} />
-        <MemotestBox id='Mate-2' onClick={handleClick} visible={elements["Mate-2"]} img={Mate} />
-        <MemotestBox id='Ramon-2' onClick={handleClick} visible={elements["Ramon-2"]} img={Ramon} />
-        <MemotestBox id='Rey-2' onClick={handleClick} visible={elements["Rey-2"]} img={Rey} />
-        <MemotestBox id='Saly-2' onClick={handleClick} visible={elements["Saly-2"]} img={Saly} />
-        <MemotestBox id='Storm-2' onClick={handleClick} visible={elements["Storm-2"]} img={Storm} />
+        {Object.keys(elements).filter((e) => e.includes('2')).map((name:string) => <MemotestBox key={name} id={name} onClick={handleClick} visible={elements[name].visible} img={elements[name].image} />)}
       </div>
     </div>
   )
 }
+
+/**
+ * Returns a IState object
+ * @param images list of image files
+ */
+function buildInitialState(images: string[]):IState {
+  return images.reduce((result, img) => {
+    result[`${img.split('media/')[1].split('.')[0]}-1`] = {
+      image: img,
+      visible: false
+    }
+
+    result[`${img.split('media/')[1].split('.')[0]}-2`] = {
+      image: img,
+      visible: false
+    }
+
+    return result
+  }, {})
+}
+
+export default MemotestGame;
