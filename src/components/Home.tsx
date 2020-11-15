@@ -8,7 +8,7 @@ export default (props: any) =>
     <h4>Un sitio de juegos infantiles sin puntajes ni competencia. <br/> Es gratis y siempre lo será 😉</h4>
     <h4 className="sound-msg">Activa el sonido para una mejor experiencia</h4>
 
-    <Link to="/juegos">
+    <Link to="/games">
       <div id='lets-play'><span>Jugar</span><img className="home-game-img" src={GameImg} alt=""/></div>
     </Link>
   </div>

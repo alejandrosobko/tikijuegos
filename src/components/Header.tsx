@@ -6,7 +6,7 @@ export default (props: any) =>
     <div className="logo"><Link to="/">TikiJuegos</Link></div>
     <div className="links">
       <ul>
-        <Link to="/juegos" ><li>Juegos</li></Link>
+        <Link to="/games" ><li>Juegos</li></Link>
       </ul>
     </div>
   </nav>

@@ -14,13 +14,13 @@ export default (props: any) =>
   <div className="container">
     <Switch>
       <Route exact={true} path="/" component={Home} />
-      <Route exact={true} path="/juegos" component={GamesList} />
-      <Route exact={true} path="/juegos/arrastrar/1" component={NumbersGame} />
-      <Route exact={true} path="/juegos/arrastrar/2" component={NumbersListGame} />
-      <Route exact={true} path="/juegos/arrastrar/3" component={LetterGame} />
-      <Route exact={true} path="/juegos/arrastrar/4" component={MemotestMcQueen} />
-      <Route exact={true} path="/juegos/arrastrar/5" component={MemotestPocoyo} />
-      <Route exact={true} path="/juegos/arrastrar/6" component={MemotestEmojis} />
+      <Route exact={true} path="/games" component={GamesList} />
+      <Route exact={true} path="/games/1" component={NumbersGame} />
+      <Route exact={true} path="/games/2" component={NumbersListGame} />
+      <Route exact={true} path="/games/3" component={LetterGame} />
+      <Route exact={true} path="/games/4" component={MemotestMcQueen} />
+      <Route exact={true} path="/games/5" component={MemotestPocoyo} />
+      <Route exact={true} path="/games/6" component={MemotestEmojis} />
       <Route component={NotFound} />
     </Switch>
   </div>

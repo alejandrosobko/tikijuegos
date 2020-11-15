@@ -9,7 +9,7 @@ interface IGCContainerProps {
 export default (props: IGCContainerProps) => {
   return (
     <div className='game-card'>
-      <Link to={`/juegos/arrastrar/${props.gameId}`} className={`game-number-${props.gameId}`} />
+      <Link to={`/games/${props.gameId}`} className={`game-number-${props.gameId}`} />
       <span>{props.title}</span>
     </div>
   )
