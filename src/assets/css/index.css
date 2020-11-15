@@ -174,6 +174,13 @@ footer {
   background-repeat: no-repeat;
 }
 
+.game-card .game-number-6 {
+  background: url('../images/memotest/emojis/emoji-logo.jpeg');
+  background-size: 100% 80%;
+  width: 90%;
+  margin-left: 5%;
+  background-repeat: no-repeat;
+}
 
 .game-card span {
   color: crimson;

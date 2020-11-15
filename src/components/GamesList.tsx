@@ -9,4 +9,5 @@ export default (props: any) =>
     <GameCard gameId={3} title="Ordenar letras"/>
     <GameCard gameId={4} title="Memotest Rayo McQueen" />
     <GameCard gameId={5} title="Memotest Pocoyo" />
+    <GameCard gameId={6} title="Memotest Emojis" />
   </div>
