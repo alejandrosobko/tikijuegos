@@ -5,6 +5,7 @@ import App from './App';
 import './assets/css/index.css';
 import './assets/css/index_mobile.css';
 import './assets/fonts/Montserrat/Montserrat-Regular.ttf';
+import './i18n';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(

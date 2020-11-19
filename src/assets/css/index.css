@@ -54,25 +54,37 @@ nav.header {
   cursor: pointer;
 }
 
-.header .links {
-  display: inline-block;
-  float: right;
-}
-
 .header a {
   color: white;
 }
 
-.header .links li {
+.header li {
   display: inline-block;
   font-size: 20px;
   cursor: pointer;
   padding: 5px 20px 5px 20px;
 }
 
-.header .links li:hover {
+.header li:hover {
   border-bottom: 3px solid black;
   color: #1bff42;
+}
+
+.header, .header .right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .flags-container {
+  display: flex;
+}
+
+.header .flags-container img {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 .not-found {
