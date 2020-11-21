@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default (props: any) =>
+export default () =>
   <footer>
-    Hecho con <span className="heart">♥</span> por <a href="http://alejandrosobko.com" target="_blank">Alejandro Sobko</a>.
+    Made with <span className="heart">♥</span> by <a href="http://alejandrosobko.com" target="_blank">Alejandro Sobko</a>.
   </footer>

@@ -10,7 +10,7 @@ import NotFound from './NotFound';
 import NumbersGame from './NumbersGame/NumbersGame';
 import NumbersListGame from './NumbersGame/NumbersListGame';
 
-export default (props: any) =>
+export default () =>
   <div className="container">
     <Switch>
       <Route exact={true} path="/" component={Home} />

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 
-export default (props: any) => {
+export default () => {
   return (
     <div>To be completed!</div>
   )
