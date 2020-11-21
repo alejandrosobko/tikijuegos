@@ -4,18 +4,9 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
 
-class App extends React.Component <{ history?: any }>{
-
-  public render() {
-    return (
-      <div>
-        <Header />
-        <div className="content"><Main /></div>
-        <Footer />
-      </div>
-    );
-  }
-
-}
-
-export default App;
+export default () =>
+  <div>
+    <Header />
+    <div className="content"><Main /></div>
+    <Footer />
+  </div>
