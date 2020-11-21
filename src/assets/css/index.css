@@ -62,7 +62,6 @@ nav.header {
   display: inline-block;
   font-size: 20px;
   cursor: pointer;
-  padding: 5px 20px 5px 20px;
 }
 
 .header li:hover {
@@ -73,16 +72,17 @@ nav.header {
 .header, .header .right {
   display: flex;
   justify-content: space-between;
+  height: 30px;
 }
 
 .header .flags-container {
   display: flex;
+  margin-left: 10px;
 }
 
 .header .flags-container img {
   width: 30px;
   height: 30px;
-  margin-top: 5px;
   cursor: pointer;
   margin-left: 5px;
 }
