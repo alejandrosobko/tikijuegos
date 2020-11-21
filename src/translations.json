@@ -10,7 +10,10 @@
       "Games list": "Lista de juegos",
       "Sort in stack": "Ordenar en pila",
       "Lower to higher": "Menor a mayor",
-      "Sort letters": "Ordenar letras"
+      "Sort letters": "Ordenar letras",
+      "Not found": "Acá no hay juegos!",
+      "Drag title": "Arrastrar",
+      "Drag subtitle": "Ordenar de menor a mayor"
     }
   },
   "en": {
@@ -24,7 +27,10 @@
       "Games list": "Games list",
       "Sort in stack": "Sort in stack",
       "Lower to higher": "Lower to higher",
-      "Sort letters": "Sort letters"
+      "Sort letters": "Sort letters",
+      "Not found": "No games here!",
+      "Drag title": "Drag and drop",
+      "Drag subtitle": "Sort from lower to higher"
     }
   }
 }

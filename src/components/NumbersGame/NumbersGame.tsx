@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { withTranslation } from 'react-i18next';
 import initialData from 'src/initial-data';
 import ClapsSound from '../../assets/sounds/claps.wav';
 import MoveSound from '../../assets/sounds/move.wav';
@@ -27,7 +28,7 @@ export interface INumbersGameState {
   win: boolean;
 }
 
-export default class NumbersGame extends React.Component<any, INumbersGameState> {
+class NumbersGame extends React.Component<any, INumbersGameState> {
 
   public constructor(props: any) {
     super(props);
@@ -57,8 +58,8 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
     const numbers = this.state.column.numberIds.map((numberId: string) => this.state.numbers[numberId]);
     return (
       <div>
-        <h3>Arrastrar</h3>
-        <h5>Ordená las cajas de menor a mayor</h5>
+        <h3>{this.props.t('Drag title')}</h3>
+        <h5>{this.props.t('Drag subtitle')}</h5>
         <RestartGame win={this.state.win} onRestart={this.restartGame} />
         <NumbersGameContext onDragEnd={this.onDragEnd}>
           <VerticalColumn column={this.state.column} items={numbers} />
@@ -85,6 +86,8 @@ export default class NumbersGame extends React.Component<any, INumbersGameState>
   }
 
 }
+
+export default withTranslation()(NumbersGame);
 
 export function isSortedAsc(list: number[]): boolean {
   return list.every((val: any, i: number, arr: any) => !i || (parseInt(val, 10) >= arr[i - 1]));

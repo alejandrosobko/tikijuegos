@@ -5,7 +5,7 @@ import translations from './translations.json'
 i18n
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
+    fallbackLng: 'es',
     react: {
       useSuspense: false
     },
