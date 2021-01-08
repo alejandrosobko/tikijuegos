@@ -8,7 +8,7 @@ This repository contains a few games made in React using [beautifull drag and dr
 They're games for kids, without score nor competition.
 
 #### Play
-http://tikijuegos.herokuapp.com/
+https://tikijuegos.netlify.app/
 
 
 #### Developers
